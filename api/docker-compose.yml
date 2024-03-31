@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs_service
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
+    container_name: db
+    image: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: es2
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
