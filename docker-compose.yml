@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    image: nodejs_service
+    volumes:
+      - ./api:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
+    container_name: db
+    image: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: es2
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+
+  web:
+    container_name: web
+    build: ./frontend
+    ports:
+    - "3010:3000"
+    volumes:
+    - ./frontend:/app
+    environment:
+      - NODE_ENV=development
+      - API_URL=http://localhost:3000
+    command: ["npm", "start"]
+
