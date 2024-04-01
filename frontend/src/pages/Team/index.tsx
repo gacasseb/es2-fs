@@ -27,7 +27,7 @@ function Team() {
                 <button onClick={() => navigate('/team/register')} className="btn btn-primary pages-btn">
                     Cadastrar time
                 </button>
-                <br/>
+                <br />
                 <TeamList teams={teams} />
             </div >
         </div >

@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { create } from 'services/api/Membros/MembrosService';
 import { getAll } from "services/api/Times/TimesService";
-
-import {ReactComponent as Edit} from '../../assets/img/edit.svg';
-
 import '../styles.css';
 
 function CadastroMembro() {
@@ -41,34 +38,34 @@ function CadastroMembro() {
             alert('Erro ao cadastrar membro!');
         }
     }
-    
+
     const handleChange = (event: any) => {
         setMembro({ ...membro, [event.target.name]: event.target.value })
     }
 
     return (
-        <div className="pages-form-register-container">
-            <div className="pages-form-container">
+
+        <div className="pages-form-container">
             <div className="pages-card-bottom-container">
                 <h3>Cadastro de Membro</h3>
                 <form className="pages-form" onSubmit={handleSubmit}>
                     <div className="form-group pages-form-group">
                         <label htmlFor="member_name">Nome</label>
-                        <input name="name" type="text" className="form-control" id="member_name"  onChange={handleChange} required/>
+                        <input name="name" type="text" className="form-control" id="member_name" onChange={handleChange} required />
 
                         <label htmlFor="address">Endereço</label>
-                        <input name="address" className="form-control" id="member_address"  onChange={handleChange} required/>
+                        <input name="address" className="form-control" id="member_address" onChange={handleChange} required />
 
                         <label htmlFor="birthdate">Data de aniversário</label>
-                        <input name="birthdate" type="date" className="form-control" id="member_birthdate"  onChange={handleChange} required/>
-                        
+                        <input name="birthdate" type="date" className="form-control" id="member_birthdate" onChange={handleChange} required />
+
                         <label htmlFor="member_gender">Gênero</label>
                         <select name="gender" onChange={handleChange} required>
                             <option value="">Selecione um gênero</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select>
-                        <br/>
+                        <br />
 
                         <label htmlFor="member_race">Raça</label>
                         <select name="race" onChange={handleChange} required>
@@ -79,7 +76,7 @@ function CadastroMembro() {
                             <option value="Indígena">Indígena</option>
                             <option value="Amarelo">Amarelo</option>
                         </select>
-                        <br/>
+                        <br />
 
                         <label htmlFor="member_role">Especialidade</label>
                         <select name="role" onChange={handleChange} required>
@@ -92,6 +89,7 @@ function CadastroMembro() {
                             <option value="Delivery">Delivery</option>
                             <option value="PO">PO</option>
                         </select>
+                        <br />
 
                         <label htmlFor="team_id">Time</label>
                         <select name="team" onChange={handleChange}>
@@ -107,10 +105,7 @@ function CadastroMembro() {
                 </Link>
             </div >
         </div >
-        <div className="pages-image-register-container">
-                <Edit />
-            </div>
-        </div>
+
     )
 }
 

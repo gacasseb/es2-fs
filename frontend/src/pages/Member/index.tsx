@@ -2,7 +2,6 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { getAll } from 'services/api/Membros/MembrosService';
-
 import '../styles.css';
 import MemberList from 'components/MemberList';
 
@@ -29,7 +28,7 @@ function Member() {
                 <button onClick={() => navigate('/member/register')} className="btn btn-primary pages-btn">
                     Cadastrar membro
                 </button>
-                <br/>
+                <br />
                 <MemberList members={membros} />
             </div >
         </div >

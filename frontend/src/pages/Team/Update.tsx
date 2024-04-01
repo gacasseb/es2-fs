@@ -76,7 +76,7 @@ function UpdateTeam() {
                 <form className="pages-form" onSubmit={handleSubmit}>
                     <div className="form-group pages-form-group">
                         <label htmlFor="teamName">Informe o nome do time</label>
-                        <input name="name" className="form-control" id="teamName" onChange={handleChange} value={name}/>
+                        <input name="name" className="form-control" id="teamName" onChange={handleChange} value={name} />
                         <label htmlFor="project_id">Projeto</label>
                         <select name="ProjectId" onChange={handleChange} value={ProjectId}>
                             {getProjectList()}

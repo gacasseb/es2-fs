@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { create } from 'services/api/Times/TimesService';
 import { getAll } from 'services/api/Projetos/ProjetosService';
-import {ReactComponent as Edit} from '../../assets/img/edit.svg';
 
 import '../styles.css';
 
@@ -47,14 +46,13 @@ function CadastroTeam() {
     }, [])
 
     return (
-        <div className="pages-form-register-container">
-            <div className="pages-form-container">
+        <div className="pages-form-container">
             <div className="pages-card-bottom-container">
                 <h3>Cadastro de Time</h3>
                 <form className="pages-form" onSubmit={handleSubmit}>
                     <div className="form-group pages-form-group">
                         <label htmlFor="teamName">Informe o nome do time</label>
-                        <input name="name" className="form-control" id="teamName" onChange={handleChange}/>
+                        <input name="name" className="form-control" id="teamName" onChange={handleChange} />
                         <label htmlFor="project_id">Projeto</label>
                         <select name="project" onChange={handleChange}>
                             {getProjectList()}
@@ -69,10 +67,6 @@ function CadastroTeam() {
                 </Link>
             </div >
         </div >
-        <div className="pages-image-register-container">
-                <Edit />
-            </div>
-        </div>
     )
 }
 

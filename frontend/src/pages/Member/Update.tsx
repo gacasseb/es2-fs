@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { updateById, getById } from 'services/api/Membros/MembrosService';
 import { getAll } from "services/api/Times/TimesService";
-
 import '../styles.css';
 
 function UpdateMembro() {
@@ -25,7 +24,7 @@ function UpdateMembro() {
             alert('Erro ao atualizar membro!');
         }
     }
-    
+
     const handleChange = (event: any) => {
         setMembro({ ...membro, [event.target.name]: event.target.value })
     }
@@ -52,7 +51,7 @@ function UpdateMembro() {
         teams.map((project: any) => options.push(<option key={project.id} value={project.id}>{project.name}</option>))
         return options
     }
-        
+
 
     useEffect(() => {
         getTimes();
@@ -61,8 +60,8 @@ function UpdateMembro() {
             getMembro(id);
         }
     }, [])
-    
-    const {name, address, birthdate, gender, race, role, team} = membro;
+
+    const { name, address, birthdate, gender, race, role, team } = membro;
 
     return (
         <div className="pages-form-container">
@@ -71,13 +70,13 @@ function UpdateMembro() {
                 <form className="pages-form" onSubmit={handleSubmit}>
                     <div className="form-group pages-form-group">
                         <label htmlFor="member_name">Nome</label>
-                        <input name="name" type="text" className="form-control" value={name} onChange={handleChange} required/>
+                        <input name="name" type="text" className="form-control" value={name} onChange={handleChange} required />
 
                         <label htmlFor="address">Endereço</label>
-                        <input name="address" className="form-control" id="member_address" value={address} onChange={handleChange} required/>
+                        <input name="address" className="form-control" id="member_address" value={address} onChange={handleChange} required />
 
                         <label htmlFor="birthdate">Data de aniversário</label>
-                        <input name="birthdate" type="date" className="form-control" id="member_birthdate" value={birthdate} onChange={handleChange} required/>
+                        <input name="birthdate" type="date" className="form-control" id="member_birthdate" value={birthdate} onChange={handleChange} required />
 
                         <label htmlFor="member_gender">Gênero</label>
                         <select name="gender" onChange={handleChange} value={gender} required>
@@ -85,7 +84,7 @@ function UpdateMembro() {
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select>
-                        <br/>
+                        <br />
 
                         <label htmlFor="member_race">Raça</label>
                         <select name="race" onChange={handleChange} value={race} required>
@@ -96,7 +95,7 @@ function UpdateMembro() {
                             <option value="Indígena">Indígena</option>
                             <option value="Amarelo">Amarelo</option>
                         </select>
-                        <br/>
+                        <br />
 
                         <label htmlFor="member_role">Especialidade</label>
                         <select name="role" onChange={handleChange} value={role} required>
