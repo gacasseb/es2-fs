@@ -42,11 +42,11 @@ Para rodar o projeto, basta ter docker instalado e rodar o comando:
 
 # Modelo de Entidade de Relacionamento
 
-<img src="https://cdn.discordapp.com/attachments/1005328503429922827/1216564179704479804/tt.png?ex=6600d8af&is=65ee63af&hm=4abf18b5c157646cc04eac2e7858bfca1c1932ca70e470a3f8b70309cf6326af&">
+<img src="https://cdn.discordapp.com/attachments/1005328503429922827/1224398358018396271/modelo.png?ex=661d58d4&is=660ae3d4&hm=4afca8732724d6ab81aa1bc44db21e3d4eb10e60156b26c826fa5bec0b45bbd7&">
 
 # Diagrama de classes
 
-<img src="https://cdn.discordapp.com/attachments/1005328503429922827/1216587630217789440/image.png?ex=6600ee86&is=65ee7986&hm=033966da6baf682ac43e9ad2113da56870f5e67703fe4c3ce493fc431a9ef6f9&">
+<img src="https://media.discordapp.net/attachments/1005328503429922827/1216587630217789440/image.png?ex=661c9e06&is=660a2906&hm=38b5f0ebe6f37038e1a09805f9a74f9a7617c27329d88b80eba17b27e5e6f88d&=&format=webp&quality=lossless&width=476&height=583">
 
 # Anotações SCRUM
 
